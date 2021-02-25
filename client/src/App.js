@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./containers/Home";
 import SearchBooks from "./containers/SearchBooks";
 import SavedBooks from "./containers/SavedBooks";
@@ -709,7 +709,7 @@ function App() {
     	<Router>
 				<NavbarSearch setAppState={appStateCB}/>
 				<Switch>
-					<Route exact path="/" component={Home} />
+					<Route exact path="/" render={() => <SearchBooks bookArray={bookState} />} />
 					<Route exact path="/search" render={() => <SearchBooks bookArray={bookState} />} />
 					<Route exact path="/saved" component={SavedBooks} />
 				</Switch>

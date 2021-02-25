@@ -1,5 +1,3 @@
-# GBSearch
-
 # ![https://github.com/brhestir/GBSearch/blob/main/README.md](https://badgen.net/badge/GB/search/yellow?icon=github&scale=5)
 
 Search within Google Books for matching items. Publish interesting results for later research, notifying subscribed peers via SocketIO. Hastily composed with React.
@@ -8,7 +6,6 @@ Search within Google Books for matching items. Publish interesting results for l
 
 ## Table of Contents
 
-- [stark-etf](#GBSearch)
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)

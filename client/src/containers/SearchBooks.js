@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ListView from "../components/ListView/ListView";
 
 const SearchBooks = (props) => {

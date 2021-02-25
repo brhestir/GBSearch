@@ -4,7 +4,6 @@ import axios from "axios";
 
 const NavbarSearch = (props) => {
   const [formInput, setFormInput] = useState("Mathematics");
-  const [apiString, setApiString] = useState("");
   const handleInputChange = (e) => {
     console.log(e.target.value);
     setFormInput(e.target.value);
@@ -24,9 +23,7 @@ const NavbarSearch = (props) => {
       )
       .then((response) => {
         console.log(response.data);
-        {
-          props.setAppState(response.data);
-        }
+        props.setAppState(response.data);
       })
       .catch((err) => {
         console.log(err);
