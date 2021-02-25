@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import ListView from "./components/ListView/ListView";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const tempResult = tempResultGetter();
-	const itemsIndex = 0;
-	const authorArrayReducer = (acc, cV) => acc + ", " + cV;
-	console.log(`GBID: ${tempResult.items[itemsIndex].id}`);
-	console.log(`Title: ${tempResult.items[itemsIndex].volumeInfo.title}`);
-	console.log(`Authors: ${tempResult.items[itemsIndex].volumeInfo.authors.reduce(authorArrayReducer)}.`);
-	console.log(`Description: ${tempResult.items[itemsIndex].volumeInfo.description}`);
-	console.log(`Thumbnail: ${tempResult.items[itemsIndex].volumeInfo.imageLinks.thumbnail}`);
-	console.log(`Info: ${tempResult.items[itemsIndex].volumeInfo.infoLink}`);
+
+  
+	
+	const [tempResult, setTempResult] = useState(tempResultGetter());
+	const [itemsIndex, setItemsIndex] = useState(0);
+
+	console.log(tempResult.items[itemsIndex].volumeInfo.imageLinks.thumbnail);
 	
 	return (
     <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+    	<Router>
+				<h1 className="m-3">
+						Google Books Search
+				</h1>
+				
+				<ListView listArray={tempResult.items} />
+
+			</Router>
     </div>
   );
 }
