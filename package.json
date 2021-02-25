@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "GBSearch-server",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "GBSearch-server",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,8 +12,16 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brhestir/GBSearch.git"
+  },
+  "author": "Brian Hestir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brhestir/GBSearch/issues"
+  },
+  "homepage": "https://github.com/brhestir/GBSearch#readme",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"

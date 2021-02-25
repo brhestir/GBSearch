@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "GBSearch-client",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "GBSearch-client",
   "engines": {
     "node": "15.x"
   },
