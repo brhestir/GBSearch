@@ -1,33 +1,15 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import ListView from "./components/ListView/ListView";
+import React, {useState} from "react";
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
+import Home from "./containers/Home";
+import SearchBooks from "./containers/SearchBooks";
+import SavedBooks from "./containers/SavedBooks";
+import NavbarSearch from "./components/NavbarSearch/NavbarSearch";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  
-	
-	const [tempResult, setTempResult] = useState(tempResultGetter());
-	const [itemsIndex, setItemsIndex] = useState(0);
-
-	console.log(tempResult.items[itemsIndex].volumeInfo.imageLinks.thumbnail);
-	
-	return (
-    <div className="App">
-    	<Router>
-				<h1 className="m-3">
-						Google Books Search
-				</h1>
-				
-				<ListView listArray={tempResult.items} />
-
-			</Router>
-    </div>
-  );
-}
-
-const tempResultGetter = () => {
-	return (
+	const [bookState, setBookState] = useState(
 		{
 			"kind": "books#volumes",
 			"totalItems": 3637,
@@ -715,6 +697,26 @@ const tempResultGetter = () => {
 			]
 		}
 	);
-};
+
+	const appStateCB = (newBookState) => {
+		setBookState(newBookState);
+		console.log(newBookState);
+		console.log("App bookstate updated!");
+	}
+
+	return (
+    <div className="App">
+    	<Router>
+				<NavbarSearch setAppState={appStateCB}/>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/search" render={() => <SearchBooks bookArray={bookState} />} />
+					<Route exact path="/saved" component={SavedBooks} />
+				</Switch>
+			</Router>
+			
+    </div>
+  );
+}
 
 export default App;
