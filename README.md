@@ -22,6 +22,10 @@ Search books matching terms using Google Books Search API; direct attention to s
 
 [GitHub Repo](https://www.github.com/brhestir/GBSearch)
 
+[Deployed Heroku Instance](https://still-shore-47010.herokuapp.com/)
+
+![](./assets/images/GBSearch.png)
+
 ## Installation
 
 ```bash

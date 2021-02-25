@@ -20,7 +20,7 @@ const NavbarSearch = (props) => {
     e.preventDefault();
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${formInput}&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=${formInput}&maxResults=30`
       )
       .then((response) => {
         console.log(response.data);

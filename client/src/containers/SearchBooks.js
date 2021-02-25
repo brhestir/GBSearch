@@ -6,7 +6,7 @@ const SearchBooks = (props) => {
 		
 	return (
 		<div>
-			<h1>GBSearch Results:</h1>
+			<h1 className="text-center m-3">Search Results</h1>
 			<ListView listArray={props.bookArray.items} />
 		</div>
 	);
