@@ -15,7 +15,11 @@ const bookSchema = new Schema({
 	},
 	link: {
 		type: String,
+	},
+	id: {
+		type: String,
 	}
+
 });
 
 const Book = mongoose.model("Book", bookSchema);

@@ -20,6 +20,7 @@ const ListView = ({ listArray }) => {
                 description={curEl.volumeInfo.description}
                 thumbnailURL={curEl.volumeInfo.imageLinks?.thumbnail}
                 infoURL={curEl.volumeInfo.infoLink}
+                GBID={curEl.id}
                 key={index}
               />
             );

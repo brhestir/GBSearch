@@ -9,6 +9,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
+	const [savedBookState, setSavedBookState] = useState([{
+		id: "_aedfs1234567890",
+		volumeInfo: {
+			title: "Saving and loading data with ease",
+			author: "Some Nice Person",
+			description: "Much ado about nothing in particular",
+			thumbnail: "null",
+			infoURL: "null"
+		},		
+	}]);
 	const [bookState, setBookState] = useState(
 		{
 			"kind": "books#volumes",
@@ -711,7 +721,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" render={() => <SearchBooks bookArray={bookState} />} />
 					<Route exact path="/search" render={() => <SearchBooks bookArray={bookState} />} />
-					<Route exact path="/saved" component={SavedBooks} />
+					<Route exact path="/saved" render={() => <SavedBooks savedBookArray={savedBookState} />} /> */}
 				</Switch>
 			</Router>
 			
