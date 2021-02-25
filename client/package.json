@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "GB-Search-Client",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "GB-Search-Client",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
